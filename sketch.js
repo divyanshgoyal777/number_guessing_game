@@ -76,19 +76,20 @@ const drawHeader = function () {
 };
 
 const drawBody = function (gameData) {
+    const { minRange, maxRange, inputNum, moves, guessStatus } = gameData;
     r.DrawText("GUESS THE NUMBER", 175, 160, 24, r.WHITE);
     r.DrawText(
-        `Between ${gameData.minRange} and ${gameData.maxRange}`,
+        `Between ${minRange} and ${maxRange}`,
         200, 200, 20, r.SKYBLUE
     );
     r.DrawText("YOUR GUESS", 70, 270, 18, r.LIGHTGRAY);
     r.DrawRectangle(65, 300, 200, 55, r.Color(25, 30, 45, 255));
-    r.DrawText(String(gameData.inputNum), 85, 310, 30, r.WHITE);
+    r.DrawText(String(inputNum), 85, 310, 30, r.WHITE);
     r.DrawText("MOVES", 450, 270, 18, r.LIGHTGRAY);
-    r.DrawText(String(gameData.moves), 470, 305, 35, r.GOLD);
+    r.DrawText(String(moves), 470, 305, 35, r.GOLD);
     r.DrawText("GAME STATUS", 70, 390, 18, r.LIGHTGRAY);
     r.DrawText(
-        String(gameData.guessStatus),
+        String(guessStatus),
         70, 425, 25, r.GREEN
     );
 };
